@@ -1,0 +1,23 @@
+name: "2018 SC results"
+output_dir: "docs"
+navbar:
+  title: "2018 SC Model Results"
+  left:
+  - text: "Home"
+    href: index.html
+  - text: "AmericanBlackBear"
+    href: AmericanBlackBear2018.html
+  - text: "AmericanMarten"
+    href: AmericanMarten2018.html
+  - text: "Coyote"
+    href: Coyote2018.html
+  - text: "LongTailedWeasel"
+    href: LongTailedWeasel2018.html
+  - text: "RedFox"
+    href: RedFox2018.html    
+  - text: "WhiteTailedJackrabbit"
+    href: WhiteTailedJackrabbit2018.html
+output:
+  html_document:
+    theme: cosmo
+

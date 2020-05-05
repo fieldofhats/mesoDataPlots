@@ -9,7 +9,7 @@ navbar:
     href: speciesDetectionPlots.html
   - text: "Species Detection Maps"
     href: speciesDetectionMaps.Rmd.html
-  - text: "Carnivor Diversity Maps"
+  - text: "Carnivore Diversity Maps"
     href: CarnivoreDiversityMaps.Rmd.html    
   
 output:

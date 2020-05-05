@@ -7,11 +7,11 @@ output:
 <br><br><br><br><br><br/>
 
 
-[Back to SC Models](https://fieldofhats.github.io/SC_Intro_summary/ )
+[Back to meso home](https://fieldofhats.github.io/SC_Occupancy_Plots_homepage )
 
-### 2018 results notes:
+### summary plots from mesocarnivore camera data
 
-#### see model selection info under species tabs
+#### see plot sets under tabs
 
 
 

@@ -1,0 +1,176 @@
+---
+title: ""
+output: html_document
+---
+```{r set-options, echo=FALSE, cache=FALSE}
+options(width = 22)
+```
+
+```{r, include = F}
+############### Season elevation plots by species detections
+#######   tabbed by species
+# read data
+library(tidyverse)
+library (knitr)
+
+# plot.data <- readRDS('./_data/carnivoreDetectionsBySiteElev_plot.RDS')
+# # str(plot.data)
+# 
+# 
+# species <- names(plot.data)
+# species<-species[species != ""]
+
+in.path<-'./CarnivoreDiversityMaps_images'
+plots<-list.files(in.path)
+plot.names<-gsub('.png', '', plots)
+
+plots<-file.path(in.path,plots)
+
+# plot.list.diverisity<-list()
+
+diversity.tab <- tibble(sa = plot.names, path = plots)
+
+diversity.tab$area.names<-c('Humphreys Basin', 'Mammoth Lakes Basin', 'Mono Cr.', 'North Fork Bishop Cr.', 'Ritter Range', 'Rock Cr.' )
+tab.order<-c(2,6,4,1,3,5)
+
+diversity.tab<-diversity.tab[tab.order,]
+
+# for(i in 1:length(plot.names)){
+#  # plot.list[[plot.names[i]]]<-file.path(in.path,plots[i])
+#   plot.list.diverisity[[plot.names[i]]]<-file.path(plots[i])
+# }
+
+
+in.path<-'./CarnivoreDiversityDetectionsMaps_images'
+plots<-list.files(in.path)
+plot.names<-gsub('.png', '', plots)
+
+plots<-file.path(in.path,plots)
+
+plot.list.detections<-list()
+
+detection.tab <- tibble(sa = plot.names, path = plots)
+
+detection.tab$area.names<-c('Humphreys Basin', 'Mammoth Lakes Basin', 'Mono Cr.', 'North Fork Bishop Cr.', 'Ritter Range', 'Rock Cr.' )
+tab.order<-c(2,6,4,1,3,5)
+
+detection.tab<-detection.tab[tab.order,]
+
+```
+<br><br><br><br><br>
+
+
+### Carnivore Diversity by survey season
+
+<br><br/>
+<br><br/>
+
+
+
+
+
+
+
+
+
+```{r, include = F}
+####################################################################################################################
+#############################  
+
+width<-'90%'
+```
+
+#### Number of carnivore species by camera site
+
+
+
+
+
+##  {.tabset}
+
+### 2016
+
+<h4>Clockwise from top left: Mammoth Lakes Basin, Rock Cr., North Fork Bishop Cr.</h4>
+```{r   fig.show = 'hold', echo=FALSE, out.width = '50%', fig.align='default'}
+
+knitr::include_graphics(diversity.tab$path[1])
+knitr::include_graphics(diversity.tab$path[2])
+knitr::include_graphics(diversity.tab$path[3])
+```
+
+### 2017
+
+<h4>Humphreys Basin</h4>
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+knitr::include_graphics(diversity.tab$path[4])
+```
+
+### 2018
+
+<h4>Mono Cr.</h4>
+
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+knitr::include_graphics(diversity.tab$path[5])
+```
+
+### 2019
+
+<h4>Ritter Range</h4>
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+knitr::include_graphics(diversity.tab$path[6])
+```
+
+
+
+##
+
+
+<br><br><br><br><br><br>
+
+
+#### Total carnivor detections by camera site
+
+
+
+
+
+##  {.tabset}
+
+### 2016
+
+<h4>Clockwise from top left: Mammoth Lakes Basin, Rock Cr., North Fork Bishop Cr.</h4>
+```{r   fig.show = 'hold', echo=FALSE, out.width = '50%', fig.align='default'}
+
+knitr::include_graphics(detection.tab$path[1])
+knitr::include_graphics(detection.tab$path[2])
+knitr::include_graphics(detection.tab$path[3])
+```
+
+### 2017
+
+<h4>Humphreys Basin</h4>
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+knitr::include_graphics(detection.tab$path[4])
+```
+
+### 2018
+
+<h4>Mono Cr.</h4>
+
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+knitr::include_graphics(detection.tab$path[5])
+```
+
+### 2019
+
+<h4>Ritter Range</h4>
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+knitr::include_graphics(detection.tab$path[6])
+```
+
+
+
+##
+
+
+

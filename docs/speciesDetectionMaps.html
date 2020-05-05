@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>speciesDetectionMaps.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Mesocarnivore Plots</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="speciesDetectionPlots.html">Detection By Elevation</a>
+</li>
+<li>
+  <a href="speciesDetectionMaps.Rmd.html">Species Detection Maps</a>
+</li>
+<li>
+  <a href="CarnivoreDiversityMaps.Rmd.html">Carnivor Diversity Maps</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br><br><br><br><br></p>
+<div id="species-detections-by-survey-year" class="section level3">
+<h3>Species detections by survey year</h3>
+<p><br><br/> <br><br/></p>
+<div id="clockwise-from-top-left" class="section level4">
+<h4>2016, clockwise from top left</h4>
+</div>
+<div id="mammoth-lakes-basin-rock-cr.-north-fork-bishop-cr." class="section level4">
+<h4>Mammoth Lakes Basin, Rock Cr., North Fork Bishop Cr.</h4>
+</div>
+</div>
+<div id="section" class="section level2 tabset">
+<h2></h2>
+<div id="americanbadger" class="section level3">
+<h3>AmericanBadger</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_AmericanBadger.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_AmericanBadger.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_AmericanBadger.png" width="50%" /></p>
+</div>
+<div id="americanblackbear" class="section level3">
+<h3>AmericanBlackBear</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_AmericanBlackBear.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_AmericanBlackBear.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_AmericanBlackBear.png" width="50%" /></p>
+</div>
+<div id="americanmarten" class="section level3">
+<h3>AmericanMarten</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_AmericanMarten.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_AmericanMarten.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_AmericanMarten.png" width="50%" /></p>
+</div>
+<div id="bobcat" class="section level3">
+<h3>Bobcat</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_Bobcat.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_Bobcat.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_Bobcat.png" width="50%" /></p>
+</div>
+<div id="coyote" class="section level3">
+<h3>Coyote</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_Coyote.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_Coyote.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_Coyote.png" width="50%" /></p>
+</div>
+<div id="longtailedweasel" class="section level3">
+<h3>LongTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_LongTailedWeasel.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_LongTailedWeasel.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_LongTailedWeasel.png" width="50%" /></p>
+</div>
+<div id="mountainlion" class="section level3">
+<h3>MountainLion</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_MountainLion.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_MountainLion.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_MountainLion.png" width="50%" /></p>
+</div>
+<div id="redfox" class="section level3">
+<h3>RedFox</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_RedFox.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_RedFox.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_RedFox.png" width="50%" /></p>
+</div>
+<div id="shorttailedweasel" class="section level3">
+<h3>ShortTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_ShortTailedWeasel.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_ShortTailedWeasel.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_ShortTailedWeasel.png" width="50%" /></p>
+</div>
+<div id="whitetailedjackrabbit" class="section level3">
+<h3>WhiteTailedJackrabbit</h3>
+<p><img src="speciesDetectionMaps_images/mammothLakesBasin_WhiteTailedJackrabbit.png" width="50%" /><img src="speciesDetectionMaps_images/rockCreek_WhiteTailedJackrabbit.png" width="50%" /><img src="speciesDetectionMaps_images/northforkBishopCreek_WhiteTailedJackrabbit.png" width="50%" /></p>
+</div>
+</div>
+<div id="section-1" class="section level2">
+<h2></h2>
+<p><br><br><br><br></p>
+<div id="humphreys-basin" class="section level4">
+<h4>2017, Humphreys Basin</h4>
+</div>
+</div>
+<div id="section-2" class="section level2 tabset">
+<h2></h2>
+<div id="americanbadger-1" class="section level3">
+<h3>AmericanBadger</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_AmericanBadger.png" width="90%" /></p>
+</div>
+<div id="americanblackbear-1" class="section level3">
+<h3>AmericanBlackBear</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_AmericanBlackBear.png" width="90%" /></p>
+</div>
+<div id="americanmarten-1" class="section level3">
+<h3>AmericanMarten</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_AmericanMarten.png" width="90%" /></p>
+</div>
+<div id="bobcat-1" class="section level3">
+<h3>Bobcat</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_Bobcat.png" width="90%" /></p>
+</div>
+<div id="coyote-1" class="section level3">
+<h3>Coyote</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_Coyote.png" width="90%" /></p>
+</div>
+<div id="longtailedweasel-1" class="section level3">
+<h3>LongTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_LongTailedWeasel.png" width="90%" /></p>
+</div>
+<div id="mountainlion-1" class="section level3">
+<h3>MountainLion</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_MountainLion.png" width="90%" /></p>
+</div>
+<div id="redfox-1" class="section level3">
+<h3>RedFox</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_RedFox.png" width="90%" /></p>
+</div>
+<div id="shorttailedweasel-1" class="section level3">
+<h3>ShortTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_ShortTailedWeasel.png" width="90%" /></p>
+</div>
+<div id="whitetailedjackrabbit-1" class="section level3">
+<h3>WhiteTailedJackrabbit</h3>
+<p><img src="speciesDetectionMaps_images/humphreysBasin_WhiteTailedJackrabbit.png" width="90%" /></p>
+</div>
+</div>
+<div id="section-3" class="section level2">
+<h2></h2>
+<p><br><br><br><br></p>
+<div id="mono-creek" class="section level4">
+<h4>2018, Mono Creek</h4>
+</div>
+</div>
+<div id="section-4" class="section level2 tabset">
+<h2></h2>
+<div id="americanbadger-2" class="section level3">
+<h3>AmericanBadger</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_AmericanBadger.png" width="90%" /></p>
+</div>
+<div id="americanblackbear-2" class="section level3">
+<h3>AmericanBlackBear</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_AmericanBlackBear.png" width="90%" /></p>
+</div>
+<div id="americanmarten-2" class="section level3">
+<h3>AmericanMarten</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_AmericanMarten.png" width="90%" /></p>
+</div>
+<div id="bobcat-2" class="section level3">
+<h3>Bobcat</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_Bobcat.png" width="90%" /></p>
+</div>
+<div id="coyote-2" class="section level3">
+<h3>Coyote</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_Coyote.png" width="90%" /></p>
+</div>
+<div id="longtailedweasel-2" class="section level3">
+<h3>LongTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_LongTailedWeasel.png" width="90%" /></p>
+</div>
+<div id="mountainlion-2" class="section level3">
+<h3>MountainLion</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_MountainLion.png" width="90%" /></p>
+</div>
+<div id="redfox-2" class="section level3">
+<h3>RedFox</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_RedFox.png" width="90%" /></p>
+</div>
+<div id="shorttailedweasel-2" class="section level3">
+<h3>ShortTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_ShortTailedWeasel.png" width="90%" /></p>
+</div>
+<div id="whitetailedjackrabbit-2" class="section level3">
+<h3>WhiteTailedJackrabbit</h3>
+<p><img src="speciesDetectionMaps_images/monoCreek_WhiteTailedJackrabbit.png" width="90%" /></p>
+</div>
+</div>
+<div id="section-5" class="section level2">
+<h2></h2>
+<div/>
+
+<p><br><br><br><br></p>
+<div id="ritter-range" class="section level4">
+<h4>2019, Ritter Range</h4>
+</div>
+</div>
+<div id="section-6" class="section level2 tabset">
+<h2></h2>
+<div id="americanbadger-3" class="section level3">
+<h3>AmericanBadger</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_AmericanBadger.png" width="90%" /></p>
+</div>
+<div id="americanblackbear-3" class="section level3">
+<h3>AmericanBlackBear</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_AmericanBlackBear.png" width="90%" /></p>
+</div>
+<div id="americanmarten-3" class="section level3">
+<h3>AmericanMarten</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_AmericanMarten.png" width="90%" /></p>
+</div>
+<div id="bobcat-3" class="section level3">
+<h3>Bobcat</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_Bobcat.png" width="90%" /></p>
+</div>
+<div id="coyote-3" class="section level3">
+<h3>Coyote</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_Coyote.png" width="90%" /></p>
+</div>
+<div id="longtailedweasel-3" class="section level3">
+<h3>LongTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_LongTailedWeasel.png" width="90%" /></p>
+</div>
+<div id="mountainlion-3" class="section level3">
+<h3>MountainLion</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_MountainLion.png" width="90%" /></p>
+</div>
+<div id="redfox-3" class="section level3">
+<h3>RedFox</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_RedFox.png" width="90%" /></p>
+</div>
+<div id="shorttailedweasel-3" class="section level3">
+<h3>ShortTailedWeasel</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_ShortTailedWeasel.png" width="90%" /></p>
+</div>
+<div id="whitetailedjackrabbit-3" class="section level3">
+<h3>WhiteTailedJackrabbit</h3>
+<p><img src="speciesDetectionMaps_images/ritterRange_WhiteTailedJackrabbit.png" width="90%" /></p>
+</div>
+</div>
+<div id="section-7" class="section level2">
+<h2></h2>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

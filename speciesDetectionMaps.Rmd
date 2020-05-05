@@ -1,0 +1,515 @@
+---
+title: ""
+output: html_document
+---
+```{r set-options, echo=FALSE, cache=FALSE}
+options(width = 22)
+```
+
+```{r, include = F}
+############### Season elevation plots by species detections
+#######   tabbed by species
+# read data
+library(tidyverse)
+library (knitr)
+
+# plot.data <- readRDS('./_data/carnivoreDetectionsBySiteElev_plot.RDS')
+# # str(plot.data)
+# 
+# 
+# species <- names(plot.data)
+# species<-species[species != ""]
+
+in.path<-'./speciesDetectionMaps_images'
+plots<-list.files(in.path)
+plot.names<-gsub('.png', '', plots)
+
+plots<-file.path(in.path,plots)
+
+plot.names.tab<-tibble(data.frame(matrix(unlist(strsplit(plot.names, '_')), nrow = length(plot.names), byrow = T),stringsAsFactors = F))
+names(plot.names.tab)<-c('sa','sp')
+plot.names.tab$path<-plots
+
+# unique(plot.names.tab$sa)
+species <- unique(plot.names.tab$sp)
+
+
+```
+<br><br><br><br><br>
+
+
+### Species detections by survey year
+
+<br><br/>
+<br><br/>
+
+
+
+
+
+```{r, include = F}
+##########################################################################################
+#########################################  2016
+plots.pr<-plot.names.tab %>% 
+  filter(sa == "mammothLakesBasin" | sa == "northforkBishopCreek" | sa == "rockCreek")
+width<-'50%'
+```
+
+
+#### 2016, clockwise from top left
+#### Mammoth Lakes Basin, Rock Cr., North Fork Bishop Cr.
+
+
+
+
+
+##  {.tabset}
+
+### `r pl.sp<-species[1]; pl.sp`
+
+```{r  image_grobs, fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[2]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[3]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[4]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[5]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[6]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[7]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[8]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[9]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+### `r pl.sp<-species[10]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sa == "mammothLakesBasin" & sp == pl.sp) %>% select(path) %>% c()
+plot2<-plots.pr %>% filter(sa == "rockCreek" & sp == pl.sp) %>% select(path) %>% c()
+plot3<-plots.pr %>% filter(sa == "northforkBishopCreek" & sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+knitr::include_graphics(plot2[[1]])
+knitr::include_graphics(plot3[[1]])
+```
+
+##
+
+
+
+
+<br><br><br><br>
+
+
+
+
+
+```{r, include = F}
+####################################################################################################################
+#############################  2017
+
+plots.pr<-plot.names.tab %>% 
+  filter(sa == "humphreysBasin")
+width<-'90%'
+```
+
+#### 2017, Humphreys Basin
+
+
+
+
+
+##  {.tabset}
+
+### `r pl.sp<-species[1]; pl.sp`
+
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[2]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[3]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[4]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[5]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[6]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[7]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[8]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[9]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[10]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+##
+
+
+
+
+<br><br><br><br>
+
+
+
+
+```{r, include = F}
+####################################################################################################################
+#############################  2018
+
+plots.pr<-plot.names.tab %>% 
+  filter(sa == "monoCreek")
+width<-'90%'
+```
+
+#### 2018, Mono Creek
+
+
+
+
+
+##  {.tabset}
+
+### `r pl.sp<-species[1]; pl.sp`
+
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[2]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[3]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[4]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[5]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[6]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[7]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[8]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[9]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[10]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+##
+
+
+<div/>
+
+<br><br><br><br>
+
+
+
+
+```{r, include = F}
+####################################################################################################################
+#############################  2019
+
+plots.pr<-plot.names.tab %>% 
+  filter(sa == "ritterRange")
+width<-'90%'
+```
+
+#### 2019, Ritter Range
+
+
+
+
+
+##  {.tabset}
+
+### `r pl.sp<-species[1]; pl.sp`
+
+```{r   fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[2]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[3]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[4]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[5]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[6]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[7]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[8]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[9]; pl.sp`
+
+```{r  fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+### `r pl.sp<-species[10]; pl.sp`
+
+```{r fig.show = 'hold', echo=FALSE, out.width = width, fig.align='default'}
+plot1<-plots.pr %>% filter(sp == pl.sp) %>% select(path) %>% c()
+
+knitr::include_graphics(plot1[[1]])
+```
+
+##
+
+
+
+
+

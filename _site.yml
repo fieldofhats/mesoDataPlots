@@ -1,22 +1,17 @@
-name: "2018 SC results"
+name: "plots"
 output_dir: "docs"
 navbar:
-  title: "2018 SC Model Results"
+  title: "Mesocarnivore Plots"
   left:
   - text: "Home"
     href: index.html
-  - text: "AmericanBlackBear"
-    href: AmericanBlackBear2018.html
-  - text: "AmericanMarten"
-    href: AmericanMarten2018.html
-  - text: "Coyote"
-    href: Coyote2018.html
-  - text: "LongTailedWeasel"
-    href: LongTailedWeasel2018.html
-  - text: "RedFox"
-    href: RedFox2018.html    
-  - text: "WhiteTailedJackrabbit"
-    href: WhiteTailedJackrabbit2018.html
+  - text: "Detection By Elevation"
+    href: speciesDetectionPlots.html
+  - text: "Species Detection Maps"
+    href: speciesDetectionMaps.Rmd.html
+  - text: "Carnivor Diversity Maps"
+    href: CarnivoreDiversityMaps.Rmd.html    
+  
 output:
   html_document:
     theme: cosmo

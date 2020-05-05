@@ -7,7 +7,7 @@ output:
 <br><br><br><br><br><br/>
 
 
-[Back to meso home](https://fieldofhats.github.io/SC_Occupancy_Plots_homepage )
+[Back to meso home](https://fieldofhats.github.io/MesoResultsHomePage/ )
 
 ### summary plots from mesocarnivore camera data
 

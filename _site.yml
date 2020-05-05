@@ -8,9 +8,9 @@ navbar:
   - text: "Detection By Elevation"
     href: speciesDetectionPlots.html
   - text: "Species Detection Maps"
-    href: speciesDetectionMaps.Rmd.html
+    href: speciesDetectionMaps.html
   - text: "Carnivore Diversity Maps"
-    href: CarnivoreDiversityMaps.Rmd.html    
+    href: CarnivoreDiversityMaps.html    
   
 output:
   html_document:
